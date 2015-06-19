@@ -34,5 +34,5 @@ public:
 	void addEvidencia(const Evidencia evidencia);
 	void removeInvestigador(int posicion);
 	void removeEvidencia(int posicion);
-	virtual string getNombreVictima()const;
+	virtual string getNombreVictima()const=0;
 };

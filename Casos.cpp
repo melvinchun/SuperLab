@@ -91,7 +91,3 @@ void Casos::removeInvestigador(int posicion){
 void Casos::removeEvidencia(int posicion){
 	evidencias.erase(evidencias.begin()+posicion);
 }
-
-string Casos::getNombreVictima()const{
-	return "";
-}

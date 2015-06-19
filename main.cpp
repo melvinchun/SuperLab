@@ -13,9 +13,10 @@
 using namespace std;
 using std::vector;
 using std::string;
-oid agregar(int op, vector<Persona>& lista_persona, vector<Evidencia>& evidencias, vector<Homicidio>& homicidios, vector<Secuestro>& secuestros);
+void agregar(int op, vector<Persona>& lista_persona, vector<Evidencia>& evidencias, vector<Homicidio>& homicidios, vector<Secuestro>& secuestros);
+//void validar(vector<Persona>& lista_persona, vector<Evidencia>& evidencias, vector<Homicidio>& homicidios, vector<Secuestro>& secuestros);
 
-int main(int argc, char** argv[]){
+int main(int argc, char const *argv[]){
 	int opcion, opcion2;
 	vector<Persona> lista_persona;
 	vector<Evidencia> evidencias;
@@ -84,7 +85,7 @@ void agregar(int op, vector<Persona>& lista_persona, vector<Evidencia>& evidenci
 		cout<< "4. Salir"<<endl;
 		cin >>  opcion;
 		if(opcion==1){
-			string fecha_ingreso, horario;
+			string f_ingreso, horario;
 			cout<<"Ingrese nombre: "<<endl;
 			getline(cin, nombre);
 			cout << "Ingrese usuario: "<<endl;
@@ -98,12 +99,12 @@ void agregar(int op, vector<Persona>& lista_persona, vector<Evidencia>& evidenci
 			cout << "Ingrese fecha de nacimiento: "<<endl;
 			getline(cin, fecha_nacimiento);
 			cout << "Ingrese su fecha de ingreso: "<<endl;
-			getline(cin, fecha_ingreso);
+			getline(cin, f_ingreso);
 			cout << "Ingrese su horario: "<< endl;
 			getline(cin, horario);
-			lista_persona.push_back(new Forense(f_ingreso, horario, nombre, usuario, contraseña, id, fecha_nacimiento, edad));
+			lista_persona.push_back(Forense(f_ingreso, horario, nombre, usuario, contraseña, id, fecha_nacimiento, edad));
 		}else if(opcion==2){
-			string clave_ingreso, puesto;
+			string clave, puesto;
 			cout<<"Ingrese nombre: "<<endl;
 			getline(cin, nombre);
 			cout << "Ingrese usuario: "<<endl;
@@ -117,10 +118,10 @@ void agregar(int op, vector<Persona>& lista_persona, vector<Evidencia>& evidenci
 			cout << "Ingrese fecha de nacimiento: "<<endl;
 			getline(cin, fecha_nacimiento);
 			cout << "Ingrese su clave de ingreso: "<<endl;
-			getline(cin, clave_ingreso);
+			getline(cin, clave);
 			cout<<"Ingrese su puesto: "<<endl;
 			getline(cin, puesto);
-			lista_persona.push_back(new Persona_Adm(clave, puesto, nombre, usuario, contraseña,edad, id, fecha_nacimiento));
+			lista_persona.push_back(Persona_Adm(clave, puesto, nombre, usuario, contraseña,edad, id, fecha_nacimiento));
 		}else if(opcion==3){
 			int atendidos, cerrados, sin_resolver;
 			cout<<"Ingrese nombre: "<<endl;
@@ -136,12 +137,12 @@ void agregar(int op, vector<Persona>& lista_persona, vector<Evidencia>& evidenci
 			cout << "Ingrese fecha de nacimiento: "<<endl;
 			getline(cin, fecha_nacimiento);
 			cout << "Ingrese el numero de casos atendidos: "<<endl;
-			cin >> atendidos
+			cin >> atendidos;
 			cout << "Ingrese el numero de casos cerrados: "<<endl;
-			cin >> cerrados
+			cin >> cerrados;
 			cout << "Ingrese el numero de casos sin resolver: "<<endl;
-			cin >> sin_resolver
-			lista_persona.push_back(new Investigador(atendidos, cerrados, sin_resolver, nombre, usuario, contraseña, id,fecha_nacimiento, edad));
+			cin >> sin_resolver;
+			lista_persona.push_back(Investigador(atendidos, cerrados, sin_resolver, nombre, usuario, contraseña, id,fecha_nacimiento, edad));
 		}else if(opcion==4){
 			cout<<endl;
 		}else{
@@ -205,7 +206,7 @@ void agregar(int op, vector<Persona>& lista_persona, vector<Evidencia>& evidenci
 			}
 		}while(tipo1<0 || tipo1>2);
 		//Se agrega evidencia
-		evidencias.push_back(new Evidencia(nombre, tipo, lugar, huella, procesada));
+		evidencias.push_back(Evidencia(nombre, tipo, lugar, huella, procesada));
 		cout<<"Se agregao exitosamente"<<endl;
 
 	}else if(op==3){
@@ -243,7 +244,7 @@ void agregar(int op, vector<Persona>& lista_persona, vector<Evidencia>& evidenci
 				}else if(tipo1==2){
 					rescate=false;
 				}else{
-					tipo="opcion incorrecta";
+				
 				}
 			}while(tipo1<0 || tipo1>2);
 			if(rescate){
@@ -259,7 +260,7 @@ void agregar(int op, vector<Persona>& lista_persona, vector<Evidencia>& evidenci
 			getline (cin, hora);
 			cout<< "Ingrese la fecha: ";
 			getline (cin, fecha);
-			secuestros.push_back(new Secuestro(lugar, motivo, nombre_victima, rescate, cantidad, num_caso, hora, fecha));
+			secuestros.push_back(Secuestro(lugar, motivo, nombre_victima, rescate, cantidad, num_caso, hora, fecha));
 			cout<<"Se agregao exitosamente"<<endl;
 		}else if(opcion==2){
 			string nombre;
@@ -280,7 +281,7 @@ void agregar(int op, vector<Persona>& lista_persona, vector<Evidencia>& evidenci
 			getline (cin, hora);
 			cout<< "Ingrese la fecha: ";
 			getline (cin, fecha);
-			homicidios.push_back(new Homicido(nombre, nombre_sospechoso, nombre_victima, num_caso, hora, fecha));
+			homicidios.push_back(Homicidio(nombre, nombre_sospechoso, nombre_victima, num_caso, hora, fecha));
 			cout<<"Se agregao exitosamente"<<endl;
 		}else if(opcion==3){
 
@@ -293,11 +294,11 @@ void agregar(int op, vector<Persona>& lista_persona, vector<Evidencia>& evidenci
 		cout<< "1. Secuestro"<<endl;
 		cout<< "2. Homicidio" <<endl;
 		cout<< "3. Salir"<<endl;
-		cin >>  opcion1;
-		if(opcion1==1){
+		cin >>  opcion;
+		if(opcion==1){
 			int selec1;
 			for (int i = 0; i < secuestros.size(); ++i){
-				cout<<i<<". "<<secuestros[i].getNombre()<<endl;
+				cout<<i<<". "<<secuestros[i].getNum_caso()<<endl;
 			}
 			cout<<"Escoja un caso: ";
 			cin>>selec1;
@@ -307,12 +308,12 @@ void agregar(int op, vector<Persona>& lista_persona, vector<Evidencia>& evidenci
 			}
 			cout<<"Escoja una evidencia: ";
 			cin>>selec;
-			secuestros[selec1].addEvidencia(*(evidencias[selec]));
-			evidencias.erase(selec);
-		}else if(opcion1==2){
+			secuestros[selec1].addEvidencia((evidencias[selec]));
+			evidencias.erase(evidencias.begin()+selec);
+		}else if(opcion==2){
 			int selec1;
 			for (int i = 0; i < homicidios.size(); ++i){
-				cout<<i<<". "<<homicidios[i].getNombre()<<endl;
+				cout<<i<<". "<<homicidios[i].getNum_caso()<<endl;
 			}
 			cout<<"Escoja un caso: ";
 			cin>>selec1;
@@ -322,8 +323,8 @@ void agregar(int op, vector<Persona>& lista_persona, vector<Evidencia>& evidenci
 			}
 			cout<<"Escoja una evidencia: ";
 			cin>>selec;
-			homicidios[selec1].addEvidencia(*(evidencias[selec]));
-			evidencias.erase(selec);
+			homicidios[selec1].addEvidencia((evidencias[selec]));
+			evidencias.erase(evidencias.begin()+selec);
 		}
 	}else if(op==5){
 		int opcion;
@@ -331,39 +332,58 @@ void agregar(int op, vector<Persona>& lista_persona, vector<Evidencia>& evidenci
 		cout<< "1. Secuestro"<<endl;
 		cout<< "2. Homicidio" <<endl;
 		cout<< "3. Salir"<<endl;
-		cin >>  opcion1;
-		if(opcion1==1){
+		cin >>  opcion;
+		if(opcion==1){
 			int selec1;
 			for (int i = 0; i < secuestros.size(); ++i){
-				cout<<i<<". "<<secuestros[i].getNombre()<<endl;
+				cout<<i<<". "<<secuestros[i].getNum_caso()<<endl;
 			}
 			cout<<"Escoja un caso: ";
 			cin>>selec1;
 			int selec;
-			for (int i = 0; i < investigadores.size(); ++i){
-				cout<<investigadores[i].getNombre()<<endl;
+			for (int i = 0; i < lista_persona.size(); ++i){
+				cout<<lista_persona[i].getNombre()<<endl;
 			}
 			cout<<"Escoja una investigador: ";
 			cin>>selec;
-			secuestros[selec1].addInvestigador(*(investigadores[selec]));
-			investigadores.erase(selec);
-		}else if(opcion1==2){
+			Persona* p= new Persona(lista_persona[selec]);
+			Investigador* temp=static_cast<Investigador*>(p);
+			if(temp!=NULL){
+				(secuestros[selec1]).addInvestigador(*temp);
+				lista_persona.erase(lista_persona.begin()+selec);
+			}
+		}else if(opcion==2){
 			int selec1;
 			for (int i = 0; i < homicidios.size(); ++i){
-				cout<<i<<". "<<homicidios[i].getNombre()<<endl;
+				cout<<i<<". "<<homicidios[i].getNum_caso()<<endl;
 			}
 			cout<<"Escoja un caso: ";
 			cin>>selec1;
 			int selec;
-			for (int i = 0; i < investigadores.size(); ++i){
-				cout<<investigadores[i].getNombre()<<endl;
+			for (int i = 0; i < lista_persona.size(); ++i){
+				cout<<lista_persona[i].getNombre()<<endl;
 			}
 			cout<<"Escoja una evidencia: ";
 			cin>>selec;
-			homicidios[selec1].addInvestigador(*(investigadores[selec]));
-			investigadores.erase(selec);
+			Persona* p= new Persona(lista_persona[selec]);
+			Investigador* temp=static_cast<Investigador*>(p);
+			if(temp!=NULL){
+				(homicidios[selec1]).addInvestigador(*temp);
+				lista_persona.erase(lista_persona.begin()+selec);
+			}
 		}
 	}else{
 		cout<< "Opcion no valida"<<endl;
 	}
 }
+
+/*void validar(vector<Persona>& lista_persona, vector<Evidencia>& evidencias, vector<Homicidio>& homicidios, vector<Secuestro>& secuestros){
+	string usuario, contraseña;
+	cout<<"Ingrese su usuario"<<endl;
+	cin >> usuario;
+	cout << "Ingrese su contraseña"<<endl;
+	cin >> contraseña;
+
+
+}
+*/
