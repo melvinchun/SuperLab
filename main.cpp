@@ -7,6 +7,8 @@
 #include <vector>
 
 using namespace std;
+using std::vector;
+using std::string;
 void agregar(int opcion2);
 
 int main(int argc, char** argv[]){

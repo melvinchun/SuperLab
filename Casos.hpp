@@ -4,7 +4,7 @@
 #include "Investigador.hpp"
 #include "Evidencia.hpp"
 
-using std_string;
+using std::string;
 
 class Casos{
 	int num_caso;
