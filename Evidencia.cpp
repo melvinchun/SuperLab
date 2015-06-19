@@ -3,6 +3,14 @@
 
 using std::string;
 
+Evidencia::Evidencia(){
+	this->nombre="";
+	this->tipo="";
+	this->lugar="";
+	this->huella=false;
+	this->procesada=false;
+}
+
 Evidencia::Evidencia(string nombre, string tipo, string lugar, bool huella, bool procesada){
 	this->nombre=nombre;
 	this->tipo=tipo;

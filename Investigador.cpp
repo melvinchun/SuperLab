@@ -1,8 +1,10 @@
 #include "Persona.hpp"
 #include "Investigador.hpp"
-
 #include <string>
 #include <sstream>
+
+using std::string;
+using std::stringstream;
 
 Investigador::Investigador(int atendidos, int cerrados, int sin_resolver):Persona(nombre, usuario, contraseña, edad, id, fecha_nacimiento){
 	this->atendidos = atendidos;
@@ -10,8 +12,10 @@ Investigador::Investigador(int atendidos, int cerrados, int sin_resolver):Person
 	this->sin_resolver = sin_resolver;
 }
 
-Investigador::Invesigador(const Investigador& s):Persona(r){
-
+Investigador::Invesigador(const Investigador& other):Persona(other){
+	atendidos = other.atendidos;
+	cerrados = other.cerrados;
+	sin_resolver = other.sin_resolver;
 }
 
 Investigador::~Investigador(){}

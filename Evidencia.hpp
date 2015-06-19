@@ -10,6 +10,7 @@ class Evidencia{
 	bool huella;
 	bool procesada;
 public:
+	Evidencia();
 	Evidencia(string nombre, string tipo, string lugar, bool huella, bool procesada);
 	Evidencia(const Evidencia&);
 	const string getNombre()const;

@@ -12,6 +12,7 @@ class Secuestro public Casos{
 	double cantidad;
 	bool estado_victima;
 public:
+	Secuestro();
 	Secuestro(string lugar, string motivo, string nombre_victima, bool rescate, double cantidad, bool estado_victima, int num_caso, string hora, string fecha);
 	Secuestro(const Secuestro&);
 	~Secuestro();

@@ -4,6 +4,13 @@
 
 using std::string;
 
+Casos::Casos(){
+	num_caso=0;
+	hora="";
+	fecha="";
+	estado=false;
+}
+
 Casos::Casos(int num_caso, string hora, string fecha){
 	this->num_caso=num_caso;
 	this->hora=hora;

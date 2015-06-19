@@ -5,6 +5,13 @@
 
 using std::string;
 
+Homicidio::Homicidio():Casos(){
+	this->nombre="";
+	this->nombre_sospechoso="";
+	this->nombre_victima="";
+	this->nombre_culpable="";
+}
+
 Homicidio::Homicido(string nombre, string nombre_sospechoso, string nombre_victima, int num_caso, string hora, string fecha):Casos(num_caso, hora, fecha){
 	this->nombre=nombre;
 	this->nombre_sospechoso=nombre_sospechoso;

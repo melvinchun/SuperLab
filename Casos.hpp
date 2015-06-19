@@ -15,6 +15,7 @@ class Casos{
 	bool estado;
 
 public:
+	Casos();
 	Casos(int num_caso, string hora, string fecha);
 	Casos(const Casos&);
 	~Casos();

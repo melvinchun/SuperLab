@@ -1,10 +1,8 @@
 #pragma once
-
+#include "Persona.hpp"
 #include <string>
 
-using namespace std;
-
-#include "Persona.hpp"
+using std::string;
 
 class Persona_Adm::public Persona{
 	string clave, puesto;

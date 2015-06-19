@@ -2,14 +2,25 @@
 #include <vector>
 #include "Casos.hpp"
 #include "Secuestro.hpp"
+using std::string;
 
-Secuestro::Secuestro(string lugar, string motivo, string nombre_victima, bool rescate, double cantidad, bool estado_victima, int num_caso, string hora, string fecha):Casos(num_caso, hora, fecha){
+
+Secusestro::Secuestro():Casos(){
+	this->lugar="";
+	this->motivo="";
+	this->nombre_victima= "";
+	this->rescate= false;
+	this->cantidad= 0;
+	this->estado_victima= false;
+}
+
+Secuestro::Secuestro(string lugar, string motivo, string nombre_victima, bool rescate, int num_caso, string hora, string fecha):Casos(num_caso, hora, fecha){
 	this->lugar=lugar;
 	this->motivo=motivo;
 	this->nombre_victima= nombre_victima;
 	this->rescate= rescate;
-	this->cantidad= cantidad;
-	this->estado_victima= estado_victima;
+	this->cantidad= 0;
+	this->estado_victima= false;
 }
 
 Secuestro::Secuestro(const Secuestro&):Casos(other){
@@ -66,9 +77,18 @@ void Secuestro::setRescate(bool rescate){
 }
 
 void Secuestro::setCantidad(double cantidad){
-	this->cantidad=cantidad;
+	if(rescate){
+		this->cantidad=cantidad;
+	}else{
+		this->cantidad=0;
+	}
+	
 }
 
-void Secuestro::setEstadoVictima(bool estado){
-	this->estado=estado;
+void Secuestro::setEstadoVictima(bool estado_victima){
+	if(this->getEstado()){
+		this->estado_victima=estado_victima;
+	}else{
+		this->estado_victima=false;
+	}
 }

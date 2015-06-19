@@ -13,6 +13,7 @@ class Homicido : public Caso{
 	string nombre_culpable;
 
 public:
+	Homicidio();
 	Homicido(string nombre, string nombre_sospechoso, string nombre_victima, int num_caso, string hora, string fecha);
 	Homicidio(const Homicidio&);
 	~Homicido();

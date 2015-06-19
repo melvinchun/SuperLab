@@ -10,14 +10,18 @@ Persona::Persona(string nombre, string usuario, string contra, string id, string
 	this->fecha_nacimiento = fecha_nacimiento;
 }
 
-Persona::Persona(const Persona&){
-
+Persona::Persona(const Persona& other){
+	nombre = other.nombre;
+	usuario = other.usuario;
+	contra = other.contra;
+	id = other.id;
+	fecha_nacimiento = other.fecha_nacimiento;
 }
 
 Persona::~Persona(){}
 
 void Persona::setNombre(string nombre){
-	this->nombre = nombre;
+	this->nombre = other.nombre;
 }
 
 string Persona::getNombre()const{

@@ -1,11 +1,9 @@
 #ifndef FORENSE_H
 #define FORENSE_H
-
+#include "Persona.hpp"
 #include <string>
 
 using std::string;
-
-#include "Persona.hpp"
 
 class Forense::public Persona{
 	string f_ingreso, horario;
@@ -19,6 +17,5 @@ public:
 	void setHorario(string horario);
 	string getHorario();
 };
-
 #endif 
 

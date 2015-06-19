@@ -1,10 +1,8 @@
 #pragma once
-
 #include <string>
-
-using namespace std;
-
 #include "Persona.hpp"
+
+using std::string;
 
 class Investigador::public Persona{
 	int atendidos, cerrados, sin_resorlver;
