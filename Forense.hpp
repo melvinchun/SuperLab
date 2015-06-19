@@ -8,7 +8,7 @@ using std::string;
 class Forense::public Persona{
 	string f_ingreso, horario;
 public:
-	Forense(string, string);
+	Forense(string f_ingreso, string horario, string nombre, string usuario, string contraseña, string id, string fecha_nacimiento, int edad);
 	Forense(const Forense&);
 	~Forense();
 	string toString()const;

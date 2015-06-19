@@ -5,7 +5,7 @@
 using std::string;
 using std::stringstream;
 
-Forense::Forense(string f_ingreso, string horario):Persona(nombre, usuario, contraseña, edad, id, fecha_nacimiento){
+Forense::Forense(string f_ingreso, string horario, string nombre, string usuario, string contraseña, string id, string fecha_nacimiento, int edad):Persona(nombre, usuario, contraseña, edad, id, fecha_nacimiento){
 	this->f_ingreso = f_ingreso;
 	this->horario = horario;
 }
@@ -34,7 +34,7 @@ string Forense::getHorario(){
 
 string toString()const{
 	stringstream ss;
-	ss << " Forense: Fecha de Ingreso: " << f_ingreso << " Horario de Trabaho: " << horario << Persona::toString();
+	ss << " Forense: Fecha de Ingreso: " << f_ingreso << " Horario de Trabajo: " << horario << Persona::toString();
 
 	return ss.str();
 }

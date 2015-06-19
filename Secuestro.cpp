@@ -14,12 +14,12 @@ Secusestro::Secuestro():Casos(){
 	this->estado_victima= false;
 }
 
-Secuestro::Secuestro(string lugar, string motivo, string nombre_victima, bool rescate, int num_caso, string hora, string fecha):Casos(num_caso, hora, fecha){
+Secuestro::Secuestro(string lugar, string motivo, string nombre_victima, bool rescate, double cantidad, int num_caso, string hora, string fecha):Casos(num_caso, hora, fecha){
 	this->lugar=lugar;
 	this->motivo=motivo;
 	this->nombre_victima= nombre_victima;
 	this->rescate= rescate;
-	this->cantidad= 0;
+	this->cantidad= cantidad;
 	this->estado_victima= false;
 }
 
@@ -81,8 +81,7 @@ void Secuestro::setCantidad(double cantidad){
 		this->cantidad=cantidad;
 	}else{
 		this->cantidad=0;
-	}
-	
+	}	
 }
 
 void Secuestro::setEstadoVictima(bool estado_victima){
