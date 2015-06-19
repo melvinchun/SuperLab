@@ -10,11 +10,14 @@ Forense::Forense(string f_ingreso, string horario, string nombre, string usuario
 	this->horario = horario;
 }
 
-Forense::Forense(const Forense& other):Persona(other){}
+Forense::Forense(const Forense& other):Persona(other){
 	f_ingreso = other.f_ingreso;
 	horario = other.horario;
+}
 	
-Forense::~Forense(){}
+Forense::~Forense(){
+	
+}
 
 void Forense::setF_ingreso(string f_ingreso){
 	this->f_ingreso = f_ingreso;
