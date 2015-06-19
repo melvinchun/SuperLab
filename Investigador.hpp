@@ -7,9 +7,9 @@ using std::string;
 class Investigador:public Persona{
 	int atendidos, cerrados, sin_resorlver;
 public:
-	Investigadores(int, int, int, string, string, string, string, string, int);
-	Investigadores(const Investigadores&);
-	~Investigadores();
+	Investigador(int, int, int, string, string, string, string, string, int);
+	Investigador(const Investigadore&);
+	~Investigador();
 	string toString()const;
 	void setAtendidos(int atendidos);
 	int getAtendidos();
