@@ -3,6 +3,10 @@
 #include "Persona_Adm.hpp"
 #include "Investigador.hpp"
 #include "Forense.hpp"
+#include "Evidencia.hpp"
+#include "Casos.hpp"
+#include "Homicidio.hpp"
+#include "Secuestro.hpp"
 #include <string>
 #include <vector>
 
