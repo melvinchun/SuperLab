@@ -34,6 +34,7 @@ int main(int argc, char** argv[]){
 			 cout<< "3. Casos" << endl;
 			 cout<< "4. Salir"<<endl;
 			 cin >>  opcion2;
+			 agregar(opcion2);
 
 		}else if(opcion == 2){
 			 cout<< "Que desea modifcar?"<<endl;
@@ -191,7 +192,7 @@ void agregar(int op){
 			cout<< "Ingrese la fecha: ";
 			getline (cin, fecha);
 			secuestros.push_back(new Secuestro(lugar, motivo, nombre_victima, rescate, cantidad, num_caso, hora, fecha));
-
+			cout<<"Se agregao exitosamente"<<endl;
 		}else if(opcion==2){
 			string nombre;
 			string nombre_sospechoso;
@@ -212,7 +213,7 @@ void agregar(int op){
 			cout<< "Ingrese la fecha: ";
 			getline (cin, fecha);
 			homicidios.push_back(new Homicido(nombre, nombre_sospechoso, nombre_victima, num_caso, hora, fecha));
-			
+			cout<<"Se agregao exitosamente"<<endl;
 		}else if(opcion==3){
 
 		}else{
