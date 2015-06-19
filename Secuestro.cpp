@@ -5,7 +5,7 @@
 using std::string;
 
 
-Secusestro::Secuestro():Casos(){
+Secuestro::Secuestro():Casos(){
 	this->lugar="";
 	this->motivo="";
 	this->nombre_victima= "";
@@ -23,7 +23,7 @@ Secuestro::Secuestro(string lugar, string motivo, string nombre_victima, bool re
 	this->estado_victima= false;
 }
 
-Secuestro::Secuestro(const Secuestro&):Casos(other){
+Secuestro::Secuestro(const Secuestro& other):Casos(other){
 	lugar=other.lugar;
 	motivo=other.motivo;
 	nombre_victima= other.nombre_victima;
@@ -44,7 +44,7 @@ const string Secuestro::getMotivo()const{
 	return motivo;
 }
 
-virtual string Secuestro::getNombreVictima()const{
+string Secuestro::getNombreVictima()const{
 	return nombre_victima;
 }
 
@@ -69,7 +69,7 @@ void Secuestro::setMotivo(const string motivo){
 }
 
 void Secuestro::setNombreVictima(string nombre_victima){
-	this->nombre_victima=nombre_victima
+	this->nombre_victima=nombre_victima;
 }
 
 void Secuestro::setRescate(bool rescate){

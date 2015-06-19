@@ -5,6 +5,7 @@
 #include "Evidencia.hpp"
 
 using std::string;
+using std::vector;
 
 class Casos{
 	int num_caso;
@@ -20,7 +21,7 @@ public:
 	Casos(const Casos&);
 	~Casos();
 	const int getNum_caso()const;
-	const vector<Investigadores*> getInvestigadores()const;
+	const vector<Investigador*> getInvestigadores()const;
 	const vector<Evidencia*> getEvidencias()const;
 	const string getHora()const;
 	const string getFecha()const;

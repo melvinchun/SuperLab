@@ -48,7 +48,7 @@ const int Casos::getNum_caso()const{
 	return num_caso;
 }
 
-const vector<Investigadores*> Casos::getInvestigadores()const{
+const vector<Investigador*> Casos::getInvestigadores()const{
 	return investigadores;
 }
 
