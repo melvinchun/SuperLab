@@ -27,8 +27,8 @@ int main(int argc, char** argv[]){
 		cout<<"2. Modificar"<<endl;
 		cout<<"3. Eliminar"<<endl;
 		cout<<"4. Analizar Casos"<<endl;
-		cout<<<"5. Salir"<<endl;
-		cout<<<"Ingrese su opcion: ";
+		cout<<"5. Salir"<<endl;
+		cout<<"Ingrese su opcion: ";
 		cin>>opcion;
 
 		if(opcion == 1){
@@ -54,7 +54,7 @@ int main(int argc, char** argv[]){
 		}else if(opcion == 3){
 			cout<<"Que desea eliminar?"<<endl;
 			cout<<"1. Persona"<<endl;
-			cout<<"2. Evidencia"<<endl:
+			cout<<"2. Evidencia"<<endl;
 			cout<<"3. Casos"<<endl;
 			cout<<"4. Salir"<<endl;
 			cin>> opcion2;
@@ -90,7 +90,7 @@ void agregar(int op){
 			cout << "Ingrese contraseña: " <<endl;
 			getline(cin, contraseña);
 			cout << "Ingrese edad: " <<endl;
-			getline(cin, edad);
+			cin>>edad;
 			cout << "Ingrese cedula id: "<<endl;
 			getline(cin, id);
 			cout << "Ingrese fecha de nacimiento: "<<endl;

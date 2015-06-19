@@ -6,7 +6,7 @@
 using std::string;
 using std::stringstream;
 
-Persona_Adm::Persona_Adm(string clave, string puesto, string nombre, string usuario, string contraseña, int edad, string id, string fecha_nacimiento):Persona(nombre, usuario, contraseña, edad, id, fecha_nacimiento){
+Persona_Adm::Persona_Adm(string clave, string puesto, string nombre, string usuario, string contraseña, int edad, string id, string fecha_nacimiento):Persona (nombre, usuario, contraseña, id, fecha_nacimiento, edad){
 	this->clave = clave;
 	this->puesto = puesto;
 }
@@ -34,8 +34,3 @@ string Persona_Adm::getPuesto(){
 	return this->puesto;
 }
 
-string toString()const{
-	stringstream ss;
-	ss << " Persona Administrativa: Puesto: " << puesto << Persona::toString();
-	return ss.str();
-}

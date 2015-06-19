@@ -24,7 +24,7 @@ Persona::Persona(const Persona& other){
 Persona::~Persona(){}
 
 void Persona::setNombre(string nombre){
-	this->nombre = other.nombre;
+	this->nombre = nombre;
 }
 
 string Persona::getNombre()const{
@@ -35,7 +35,7 @@ void Persona::setUsuario(string usuario){
 	this->nombre = nombre;
 }
 
-string Persona::getUsuario(){
+string Persona::getUsuario()const{
 	return this->usuario;
 }
 
@@ -43,7 +43,7 @@ void Persona::setContra(string contra){
 	this->contra = contra;
 }
 
-string Persona::getContra(){
+string Persona::getContra()const{
 	return this->contra;
 }
 
@@ -51,15 +51,15 @@ void Persona::setId(string id){
 	this->id = id;
 }
 
-string Persona::getId(){
+string Persona::getId()const{
 	return this->id;
 }
 
 void Persona::setFecha_nacimiento(string fecha_nacimiento){
-	this->fecha_nacimiento = nacimiento;
+	this->fecha_nacimiento = fecha_nacimiento;
 }
 
-string Persona::getFecha_nacimiento(){
+string Persona::getFecha_nacimiento()const{
 	return this->fecha_nacimiento;
 }
 
@@ -67,13 +67,7 @@ void Persona::setEdad(int edad){
 	this->edad = edad;
 }
 
-string Persona::getEdad(){
+int Persona::getEdad()const{
 	return this->edad;
 }
 
-string toString()const{
-	stringstream ss;
-	ss << "Nombre: " << nombre << " Usuario: "<<< usuario << " Edad: " << edad << " # de Cedula" << id << " Fecha de Nacimiento: " << fecha_nacimiento;
-
-	return ss.str();
-};

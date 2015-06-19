@@ -5,7 +5,7 @@ ejecutable: Persona.o Persona_Adm.o Investigador.o Forense.o Evidencia.o Casos.o
 			g++ main.cpp Persona.o Persona_Adm.o Investigador.o Forense.o Evidencia.o Casos.o Homicidio.o Secuestro.o -o exe
 
 Persona.o: Persona_Adm.o Investigador.o Forense.o Evidencia.o Casos.o Homicidio.o Secuestro.o
-		   g++ -c Persona.cpps
+		   g++ -c Persona.cpp
 
 Persona_Adm.o: Investigador.o Forense.o Evidencia.o Casos.o Homicidio.o Secuestro.o
 			   g++ -c Persona_Adm.cpp
