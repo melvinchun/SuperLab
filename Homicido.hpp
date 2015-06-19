@@ -5,7 +5,7 @@
 
 using std::string;
 
-class Homicido : public Caso{
+class Homicido:public Caso{
 	vector<string> sospechosos;
 	string nombre;
 	string nombre_sospechoso;
