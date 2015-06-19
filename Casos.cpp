@@ -25,7 +25,7 @@ Casos::Casos(const Casos& other){
 	fecha= other.fecha;
 	estado= other.estado;
 	for (int i = 0; i < other.investigadores.size(); ++i){
-		invesigadores.push_back(other.investigadores[i]);
+		investigadores.push_back(other.investigadores[i]);
 	}
 	for (int i = 0; i < other.evidencias.size(); ++i){
 		evidencias.push_back(other.evidencias[i]);
@@ -34,25 +34,17 @@ Casos::Casos(const Casos& other){
 }
 
 Casos::~Casos(){
-	for (int i = 0; i < investigadores.size(); ++i){
-		delete[] investigadores[i];
-	}
-
-	for (int i = 0; i < evidencias.size(); ++i){
-		delete[] evidencias[i];
-	}
-
 }
 
 const int Casos::getNum_caso()const{
 	return num_caso;
 }
 
-const vector<Investigador*> Casos::getInvestigadores()const{
+const vector<Investigador> Casos::getInvestigadores()const{
 	return investigadores;
 }
 
-const vector<Evidencia*> Casos::getEvidencias()const{
+const vector<Evidencia> Casos::getEvidencias()const{
 	return evidencias;
 }
 
@@ -84,11 +76,11 @@ void Casos::setEstado(bool estado){
 	this->estado=estado;
 }
 
-void Casos::addInvestigador(const Investigador* investigador){
-	invesigadores.push_back(investigador);
+void Casos::addInvestigador(const Investigador investigador){
+	investigadores.push_back(investigador);
 }
 
-void Casos::addEvidencia(const Evidencia* evidencia){
+void Casos::addEvidencia(const Evidencia evidencia){
 	evidencias.push_back(evidencia);
 }
 
@@ -100,6 +92,6 @@ void Casos::removeEvidencia(int posicion){
 	evidencias.erase(evidencias.begin()+posicion);
 }
 
-virtual string Casos::getNombreVictima()const{
+string Casos::getNombreVictima()const{
 	return "";
 }

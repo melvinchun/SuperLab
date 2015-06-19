@@ -9,8 +9,8 @@ using std::vector;
 
 class Casos{
 	int num_caso;
-	vector<Investigador*> investigadores;
-	vector<Evidencia*> evidencias;
+	vector<Investigador> investigadores;
+	vector<Evidencia> evidencias;
 	string hora;
 	string fecha;
 	bool estado;
@@ -21,8 +21,8 @@ public:
 	Casos(const Casos&);
 	~Casos();
 	const int getNum_caso()const;
-	const vector<Investigador*> getInvestigadores()const;
-	const vector<Evidencia*> getEvidencias()const;
+	const vector<Investigador> getInvestigadores()const;
+	const vector<Evidencia> getEvidencias()const;
 	const string getHora()const;
 	const string getFecha()const;
 	const bool getEstado()const;
@@ -30,8 +30,8 @@ public:
 	void setHora(string hora);
 	void setFecha(string fecha);
 	void setEstado(bool estado);
-	void addInvestigador(const Investigador* investigador);
-	void addEvidencia(const Evidencia* evidencia);
+	void addInvestigador(const Investigador investigador);
+	void addEvidencia(const Evidencia evidencia);
 	void removeInvestigador(int posicion);
 	void removeEvidencia(int posicion);
 	virtual string getNombreVictima()const;

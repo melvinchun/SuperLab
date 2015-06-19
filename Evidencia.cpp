@@ -19,7 +19,7 @@ Evidencia::Evidencia(string nombre, string tipo, string lugar, bool huella, bool
 	this->procesada=procesada;
 }
 
-Evidencia::Evidencia(const Evidencia&){
+Evidencia::Evidencia(const Evidencia& other){
 	nombre=other.nombre;
 	tipo=other.tipo;
 	lugar=other.lugar;

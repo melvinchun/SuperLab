@@ -1,11 +1,11 @@
 #pragma once
 #include <string>
 #include <vector>
-#include "Caso.hpp"
+#include "Casos.hpp"
 
 using std::string;
 
-class Homicido:public Caso{
+class Homicidio:public Casos{
 	vector<string> sospechosos;
 	string nombre;
 	string nombre_sospechoso;
@@ -14,9 +14,9 @@ class Homicido:public Caso{
 
 public:
 	Homicidio();
-	Homicido(string nombre, string nombre_sospechoso, string nombre_victima, int num_caso, string hora, string fecha);
+	Homicidio(string nombre, string nombre_sospechoso, string nombre_victima, int num_caso, string hora, string fecha);
 	Homicidio(const Homicidio&);
-	~Homicido();
+	~Homicidio();
 	const string getNombre()const;
 	const string getNombreSospechoso()const;
 	virtual string getNombreVictima()const;

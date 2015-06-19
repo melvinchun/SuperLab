@@ -12,7 +12,7 @@ Homicidio::Homicidio():Casos(){
 	this->nombre_culpable="";
 }
 
-Homicidio::Homicido(string nombre, string nombre_sospechoso, string nombre_victima, int num_caso, string hora, string fecha):Casos(num_caso, hora, fecha){
+Homicidio::Homicidio(string nombre, string nombre_sospechoso, string nombre_victima, int num_caso, string hora, string fecha):Casos(num_caso, hora, fecha){
 	this->nombre=nombre;
 	this->nombre_sospechoso=nombre_sospechoso;
 	this->nombre_victima=nombre_victima;
@@ -29,7 +29,7 @@ Homicidio::Homicidio(const Homicidio& other):Casos(other){
 	}
 }
 
-Homicidio::~Homicido(){
+Homicidio::~Homicidio(){
 
 }
 
@@ -41,7 +41,7 @@ const string Homicidio::getNombreSospechoso()const{
 	return nombre_sospechoso;
 }
 
-virtual string Homicidio::getNombreVictima()const{
+string Homicidio::getNombreVictima()const{
 	return nombre_victima;
 }
 
@@ -65,7 +65,7 @@ void Homicidio::setNombreVictima(const string nombre_victima){
 	this->nombre_victima= nombre_victima;
 }
 
-void setNombreCulpable(const string nombre_culpable){
+void Homicidio::setNombreCulpable(const string nombre_culpable){
 	this->nombre_culpable=nombre_culpable;
 }
 
@@ -74,5 +74,5 @@ void Homicidio::addSospechoso(const string sospechosor){
 }
 
 void Homicidio::eliminarSospechoso(int n){
-	sospechosos.erase(evidencias.begin()+n);
+	sospechosos.erase(sospechosos.begin()+n);
 }
