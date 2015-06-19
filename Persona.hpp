@@ -5,7 +5,6 @@
 #include <string>
 
 using std::string;
-using std::vector;
 
 class Persona{
 	string nombre, usuario, contra, id, fecha_nacimiento;

@@ -1,6 +1,9 @@
 #include "Persona.hpp"
+#include <string>
+#include <sstream>
 
-using namespace std;
+using std::string;
+using std::stringstream;
 
 Persona::Persona(string nombre, string usuario, string contra, string id, string fecha_nacimiento, int edad){
 	this->nombre = nombre;
