@@ -4,7 +4,7 @@
 
 using std::string;
 
-class Persona_Adm::public Persona{
+class Persona_Adm:public Persona{
 	string clave, puesto;
 public:
 	Persona_Adm(string, string,string, string, string, string, string, int);

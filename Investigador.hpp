@@ -4,7 +4,7 @@
 
 using std::string;
 
-class Investigador::public Persona{
+class Investigador:public Persona{
 	int atendidos, cerrados, sin_resorlver;
 public:
 	Investigadores(int, int, int, string, string, string, string, string, int);
