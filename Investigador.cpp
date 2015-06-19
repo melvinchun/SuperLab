@@ -6,7 +6,7 @@
 using std::string;
 using std::stringstream;
 
-Investigador::Investigador(int atendidos, int cerrados, int sin_resolver):Persona(nombre, usuario, contraseña, edad, id, fecha_nacimiento){
+Investigador::Investigador(int atendidos, int cerrados, int sin_resolver, string nombre, string usuario, string contraseña, int edad,  string id, string fecha_nacimiento):Persona(nombre, usuario, contraseña, edad, id, fecha_nacimiento){
 	this->atendidos = atendidos;
 	this->cerrados = cerrados;
 	this->sin_resolver = sin_resolver;
