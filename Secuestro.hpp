@@ -4,7 +4,7 @@
 
 using std::string;
 
-class Secuestro public Casos{
+class Secuestro:public Casos{
 	string lugar;
 	string motivo;
 	string nombre_victima;
