@@ -8,7 +8,7 @@ class Investigador:public Persona{
 	int atendidos, cerrados, sin_resorlver;
 public:
 	Investigador(int, int, int, string, string, string, string, string, int);
-	Investigador(const Investigadore&);
+	Investigador(const Investigador&);
 	~Investigador();
 	string toString()const;
 	void setAtendidos(int atendidos);
