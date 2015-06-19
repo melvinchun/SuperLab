@@ -62,14 +62,37 @@ int main(int argc, char** argv[]){
 void agregar(int op){
 	if(op==1){
 		int opcion;
+		string nombre;
+		string usuario;
+		string contraseña;
+		int edad;
+		string id;
+		string fecha_nacimiento;
 		cout<< "Que persona desea agregar?"<<endl;
 		cout<< "1. Forense"<<endl;
-		cout<< "2. Personal Administrativo" <<endl;
+		cout<< "2. Personal Admninistrativo" <<endl;
 		cout<< "3. Investigador" << endl;
 		cout<< "4. Salir"<<endl;
 		cin >>  opcion;
 		if(opcion==1){
-
+			string fecha_ingreso, horario;
+			cout<<"Ingrese nombre: "<<endl;
+			getline(cin, nombre);
+			cout << "Ingrese usuario: "<<endl;
+			getline(cin, usuario);
+			cout >> "Ingrese contraseña: " <<endl;
+			getline(cin, contraseña);
+			cout >> "Ingrese edad: " <<endl;
+			getline(cin, edad);
+			cout >> "Ingrese cedula id: "<<endl;
+			getline(cin, id);
+			cout >> "Ingrese fecha de nacimiento: "<<endl;
+			getline(cin, fecha_nacimiento);
+			cout >> "Ingrese su fecha de ingreso: "<<endl;
+			getline(cin, fecha_ingreso);
+			cout >> "Ingrese su horario: "<< endl;
+			getline(cin, horario);
+			forense.push_back(new Forense(string f_ingreso, string horario, string nombre, string usuario, string contraseña, string id, string fecha_nacimiento, int edad));
 		}else if(opcion==2){
 
 		}else if(opcion==3){
