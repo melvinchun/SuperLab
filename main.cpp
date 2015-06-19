@@ -13,7 +13,7 @@
 using namespace std;
 using std::vector;
 using std::string;
-void agregar(int opcion2);
+oid agregar(int op, vector<Persona>& lista_persona, vector<Evidencia>& evidencias, vector<Homicidio>& homicidios, vector<Secuestro>& secuestros);
 
 int main(int argc, char** argv[]){
 	int opcion, opcion2;
@@ -36,9 +36,11 @@ int main(int argc, char** argv[]){
 			 cout<< "1. Persona"<<endl;
 			 cout<< "2. Evidencia" <<endl;
 			 cout<< "3. Casos" << endl;
-			 cout<< "4. Salir"<<endl;
+			 cout<< "4. Agregar evidencias a caso"<<endl;
+			 cout<< "5. Agregar investigadores a caso"<<endl;
+			 cout<< "6. Salir"<<endl;
 			 cin >>  opcion2;
-			 agregar(opcion2);
+			 agregar(opcion2, lista_persona, evidencias, homicidios, secuestros);
 
 		}else if(opcion == 2){
 			 cout<< "Que desea agregar?"<<endl;
@@ -49,7 +51,7 @@ int main(int argc, char** argv[]){
 			 cout<< "5. Agregar investigadores a caso"<<endl;
 			 cout<< "6. Salir"<<endl;
 			 cin >>  opcion2;
-			 agregar(opcion2);
+			 agregar(opcion2, lista_persona, evidencias, homicidios, secuestros);
 			
 		}else if(opcion == 3){
 			cout<<"Que desea eliminar?"<<endl;
@@ -66,7 +68,7 @@ int main(int argc, char** argv[]){
 }
 
 
-void agregar(int op){
+void agregar(int op, vector<Persona>& lista_persona, vector<Evidencia>& evidencias, vector<Homicidio>& homicidios, vector<Secuestro>& secuestros){
 	if(op==1){
 		int opcion;
 		string nombre;
@@ -99,7 +101,7 @@ void agregar(int op){
 			getline(cin, fecha_ingreso);
 			cout << "Ingrese su horario: "<< endl;
 			getline(cin, horario);
-			lista_persona.push_back(new Forense(string f_ingreso, string horario, string nombre, string usuario, string contra, string id, string fecha_nacimiento, int edad));
+			lista_persona.push_back(new Forense(f_ingreso, horario, nombre, usuario, contraseña, id, fecha_nacimiento, edad));
 		}else if(opcion==2){
 			string clave_ingreso, puesto;
 			cout<<"Ingrese nombre: "<<endl;
@@ -118,7 +120,7 @@ void agregar(int op){
 			getline(cin, clave_ingreso);
 			cout<<"Ingrese su puesto: "<<endl;
 			getline(cin, puesto);
-			lista_persona.push_back(new Persona_Adm(string clave, string puesto, string nombre, string usuario, string contraseña, int edad, string id, string fecha_nacimiento));
+			lista_persona.push_back(new Persona_Adm(clave, puesto, nombre, usuario, contraseña,edad, id, fecha_nacimiento));
 		}else if(opcion==3){
 			int atendidos, cerrados, sin_resolver;
 			cout<<"Ingrese nombre: "<<endl;
@@ -139,7 +141,7 @@ void agregar(int op){
 			cin >> cerrados
 			cout << "Ingrese el numero de casos sin resolver: "<<endl;
 			cin >> sin_resolver
-			lista_persona.push_back(new Investigador(int atendidos, int cerrados, int sin_resolver, string nombre, string usuario, string contraseña,  string id, string fecha_nacimiento, int edad));
+			lista_persona.push_back(new Investigador(atendidos, cerrados, sin_resolver, nombre, usuario, contraseña, id,fecha_nacimiento, edad));
 		}else if(opcion==4){
 			cout<<endl;
 		}else{
