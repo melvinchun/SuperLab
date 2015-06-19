@@ -3,6 +3,7 @@
 #include "Casos.hpp"
 
 using std::string;
+using std::vector;
 
 Casos::Casos(){
 	num_caso=0;
