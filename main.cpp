@@ -93,7 +93,7 @@ void agregar(int op){
 			getline(cin, fecha_ingreso);
 			cout << "Ingrese su horario: "<< endl;
 			getline(cin, horario);
-			forense.push_back(new Forense(string f_ingreso, string horario, string nombre, string usuario, string contraseña, string id, string fecha_nacimiento, int edad));
+			lista_persona.push_back(new Forense(string f_ingreso, string horario, string nombre, string usuario, string contraseña, string id, string fecha_nacimiento, int edad));
 		}else if(opcion==2){
 			string clave_ingreso, puesto;
 			cout<<"Ingrese nombre: "<<endl;
@@ -112,7 +112,7 @@ void agregar(int op){
 			getline(cin, clave_ingreso);
 			cout<<"Ingrese su puesto: "<<endl;
 			getline(cin, puesto);
-			administradores.push_back(new Persona_Adm(string clave, string puesto, string nombre, string usuario, string contraseña, int edad, string id, string fecha_nacimiento));
+			lista_persona.push_back(new Persona_Adm(string clave, string puesto, string nombre, string usuario, string contraseña, int edad, string id, string fecha_nacimiento));
 		}else if(opcion==3){
 			int atendidos, cerrados, sin_resolver;
 			cout<<"Ingrese nombre: "<<endl;
@@ -133,7 +133,7 @@ void agregar(int op){
 			getline(cin, cerrados);
 			cout << "Ingrese el numero de casos sin resolver: "<<endl;
 			getline(cin, sin_resolver);
-			investigadores.push_back(new Investigador(int atendidos, int cerrados, int sin_resolver, string nombre, string usuario, string contraseña, int edad,  string id, string fecha_nacimiento));
+			lista_persona.push_back(new Investigador(int atendidos, int cerrados, int sin_resolver, string nombre, string usuario, string contraseña, int edad,  string id, string fecha_nacimiento));
 		}else if(opcion==4){
 			cout<<endl;
 		}else{
