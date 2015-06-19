@@ -11,9 +11,7 @@ void agregar(int opcion2);
 
 int main(int argc, char** argv[]){
 	int opcion, opcion2;
-	vector<Investigador> investigadores;
-	vector<Forense> forenses;
-	vector<Persona_Adm> administradores;
+	vector<Persona> lista_persona;
 	vector<Evidencia> evidencias;
 	vector<Homicidio> homicidios;
 	vector<Secuestro> secuestros;
@@ -37,12 +35,15 @@ int main(int argc, char** argv[]){
 			 agregar(opcion2);
 
 		}else if(opcion == 2){
-			 cout<< "Que desea modifcar?"<<endl;
-			 cout<< "1. Persona" <<endl;
-			 cout<< "2. Evidencia" << endl;
+			 cout<< "Que desea agregar?"<<endl;
+			 cout<< "1. Persona"<<endl;
+			 cout<< "2. Evidencia" <<endl;
 			 cout<< "3. Casos" << endl;
-			 cout << "4. Salir" <<endl;
-			 cin>> opcion2;
+			 cout<< "4. Agregar evidencias a caso"<<endl;
+			 cout<< "5. Agregar investigadores a caso"<<endl;
+			 cout<< "6. Salir"<<endl;
+			 cin >>  opcion2;
+			 agregar(opcion2);
 			
 		}else if(opcion == 3){
 			cout<<"Que desea eliminar?"<<endl;
@@ -279,7 +280,81 @@ void agregar(int op){
 
 		}
 	}else if(op==4){
-
+		int opcion;
+		cout<< "A que caso desea agregar?"<<endl;
+		cout<< "1. Secuestro"<<endl;
+		cout<< "2. Homicidio" <<endl;
+		cout<< "3. Salir"<<endl;
+		cin >>  opcion1;
+		if(opcion1==1){
+			int selec1;
+			for (int i = 0; i < secuestros.size(); ++i){
+				cout<<i<<". "<<secuestros[i].getNombre()<<endl;
+			}
+			cout<<"Escoja un caso: ";
+			cin>>selec1;
+			int selec;
+			for (int i = 0; i < evidencias.size(); ++i){
+				cout<<evidencias[i].getNombre()<<endl;
+			}
+			cout<<"Escoja una evidencia: ";
+			cin>>selec;
+			secuestros[selec1].addEvidencia(*(evidencias[selec]));
+			evidencias.erase(selec);
+		}else if(opcion1==2){
+			int selec1;
+			for (int i = 0; i < homicidios.size(); ++i){
+				cout<<i<<". "<<homicidios[i].getNombre()<<endl;
+			}
+			cout<<"Escoja un caso: ";
+			cin>>selec1;
+			int selec;
+			for (int i = 0; i < evidencias.size(); ++i){
+				cout<<evidencias[i].getNombre()<<endl;
+			}
+			cout<<"Escoja una evidencia: ";
+			cin>>selec;
+			homicidios[selec1].addEvidencia(*(evidencias[selec]));
+			evidencias.erase(selec);
+		}
+	}else if(op==5){
+		int opcion;
+		cout<< "A que caso desea agregar?"<<endl;
+		cout<< "1. Secuestro"<<endl;
+		cout<< "2. Homicidio" <<endl;
+		cout<< "3. Salir"<<endl;
+		cin >>  opcion1;
+		if(opcion1==1){
+			int selec1;
+			for (int i = 0; i < secuestros.size(); ++i){
+				cout<<i<<". "<<secuestros[i].getNombre()<<endl;
+			}
+			cout<<"Escoja un caso: ";
+			cin>>selec1;
+			int selec;
+			for (int i = 0; i < investigadores.size(); ++i){
+				cout<<investigadores[i].getNombre()<<endl;
+			}
+			cout<<"Escoja una investigador: ";
+			cin>>selec;
+			secuestros[selec1].addInvestigador(*(investigadores[selec]));
+			investigadores.erase(selec);
+		}else if(opcion1==2){
+			int selec1;
+			for (int i = 0; i < homicidios.size(); ++i){
+				cout<<i<<". "<<homicidios[i].getNombre()<<endl;
+			}
+			cout<<"Escoja un caso: ";
+			cin>>selec1;
+			int selec;
+			for (int i = 0; i < investigadores.size(); ++i){
+				cout<<investigadores[i].getNombre()<<endl;
+			}
+			cout<<"Escoja una evidencia: ";
+			cin>>selec;
+			homicidios[selec1].addInvestigador(*(investigadores[selec]));
+			investigadores.erase(selec);
+		}
 	}else{
 		cout<< "Opcion no valida"<<endl;
 	}
