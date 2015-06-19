@@ -13,7 +13,7 @@ int main(int argc, char** argv[]){
 	int opcion, opcion2;
 	vector<Investigador> investigadores;
 	vector<Forense> forenses;
-	vector<Persona_adm> administradores;
+	vector<Persona_Adm> administradores;
 	vector<Evidencia> evidencias;
 	vector<Homicidio> homicidios;
 	vector<Secuestro> secuestros;
@@ -80,27 +80,63 @@ void agregar(int op){
 			getline(cin, nombre);
 			cout << "Ingrese usuario: "<<endl;
 			getline(cin, usuario);
-			cout >> "Ingrese contraseña: " <<endl;
+			cout << "Ingrese contraseña: " <<endl;
 			getline(cin, contraseña);
-			cout >> "Ingrese edad: " <<endl;
+			cout << "Ingrese edad: " <<endl;
 			getline(cin, edad);
-			cout >> "Ingrese cedula id: "<<endl;
+			cout << "Ingrese cedula id: "<<endl;
 			getline(cin, id);
-			cout >> "Ingrese fecha de nacimiento: "<<endl;
+			cout << "Ingrese fecha de nacimiento: "<<endl;
 			getline(cin, fecha_nacimiento);
-			cout >> "Ingrese su fecha de ingreso: "<<endl;
+			cout << "Ingrese su fecha de ingreso: "<<endl;
 			getline(cin, fecha_ingreso);
-			cout >> "Ingrese su horario: "<< endl;
+			cout << "Ingrese su horario: "<< endl;
 			getline(cin, horario);
 			forense.push_back(new Forense(string f_ingreso, string horario, string nombre, string usuario, string contraseña, string id, string fecha_nacimiento, int edad));
 		}else if(opcion==2){
-
+			string clave_ingreso, puesto;
+			cout<<"Ingrese nombre: "<<endl;
+			getline(cin, nombre);
+			cout << "Ingrese usuario: "<<endl;
+			getline(cin, usuario);
+			cout << "Ingrese contraseña: " <<endl;
+			getline(cin, contraseña);
+			cout << "Ingrese edad: " <<endl;
+			getline(cin, edad);
+			cout << "Ingrese cedula id: "<<endl;
+			getline(cin, id);
+			cout << "Ingrese fecha de nacimiento: "<<endl;
+			getline(cin, fecha_nacimiento);
+			cout << "Ingrese su clave de ingreso: "<<endl;
+			getline(cin, clave_ingreso);
+			cout<<"Ingrese su puesto: "<<endl;
+			getline(cin, puesto);
+			administradores.push_back(new Persona_Adm(string clave, string puesto, string nombre, string usuario, string contraseña, int edad, string id, string fecha_nacimiento));
 		}else if(opcion==3){
-
+			int atendidos, cerrados, sin_resolver;
+			cout<<"Ingrese nombre: "<<endl;
+			getline(cin, nombre);
+			cout << "Ingrese usuario: "<<endl;
+			getline(cin, usuario);
+			cout << "Ingrese contraseña: " <<endl;
+			getline(cin, contraseña);
+			cout << "Ingrese edad: " <<endl;
+			getline(cin, edad);
+			cout << "Ingrese cedula id: "<<endl;
+			getline(cin, id);
+			cout << "Ingrese fecha de nacimiento: "<<endl;
+			getline(cin, fecha_nacimiento);
+			cout << "Ingrese el numero de casos atendidos: "<<endl;
+			getline(cin, atendidos);
+			cout << "Ingrese el numero de casos cerrados: "<<endl;
+			getline(cin, cerrados);
+			cout << "Ingrese el numero de casos sin resolver: "<<endl;
+			getline(cin, sin_resolver);
+			investigadores.push_back(new Investigador(int atendidos, int cerrados, int sin_resolver, string nombre, string usuario, string contraseña, int edad,  string id, string fecha_nacimiento));
 		}else if(opcion==4){
-
+			cout<<endl;
 		}else{
-
+			cout<<"Opcion Invalida"<<endl;
 		}
 	}else if(op==2){
 		//Se piden los datos de Evidencia
